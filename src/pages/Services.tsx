@@ -125,7 +125,7 @@ const Services = () => {
                 Свяжитесь с нами, и мы подберем оптимальное решение для вашего бизнеса
               </p>
               <Button size="lg" asChild>
-                <Link to="/contacts">Получить консультацию</Link>
+                <Link to="/contact">Получить консультацию</Link>
               </Button>
             </div>
           </div>

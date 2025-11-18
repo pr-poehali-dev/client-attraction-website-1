@@ -47,7 +47,7 @@ const Header = () => {
             </Link>
           </div>
           
-          <Link to="/contacts">
+          <Link to="/contact">
             <Button>Связаться</Button>
           </Link>
         </div>

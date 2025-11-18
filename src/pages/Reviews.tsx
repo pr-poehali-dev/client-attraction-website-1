@@ -1,6 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import Header from '@/components/Header';
+import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
 
@@ -52,7 +52,7 @@ const Reviews = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Navigation />
       
       <main className="pt-16">
         <section className="py-20 bg-muted">

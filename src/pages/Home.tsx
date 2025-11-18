@@ -1,132 +1,120 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import Icon from '@/components/ui/icon';
-import Navigation from '@/components/Navigation';
+import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import Icon from '@/components/ui/icon';
 
 const Home = () => {
-  const features = [
-    {
-      icon: 'TrendingUp',
-      title: 'Увеличение продаж',
-      description: 'Комплексная стратегия для роста конверсии и прибыли'
-    },
-    {
-      icon: 'Users',
-      title: 'Привлечение клиентов',
-      description: 'Эффективные каналы и инструменты для лидогенерации'
-    },
-    {
-      icon: 'Target',
-      title: 'Точное попадание',
-      description: 'Анализ аудитории и персонализированные кампании'
-    },
-    {
-      icon: 'BarChart3',
-      title: 'Аналитика и отчёты',
-      description: 'Прозрачные метрики эффективности в реальном времени'
-    }
-  ];
-
-  const stats = [
-    { value: '200+', label: 'Клиентов' },
-    { value: '350%', label: 'Средний рост ROI' },
-    { value: '5 лет', label: 'На рынке' },
-    { value: '98%', label: 'Удовлетворённость' }
-  ];
-
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <div className="min-h-screen flex flex-col">
+      <Header />
       
-      <main className="pt-20">
-        <section className="relative py-20 md:py-32 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Маркетинг, который <span className="text-primary">работает</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                Привлекаем клиентов, увеличиваем продажи и масштабируем ваш бизнес
-                с помощью современных маркетинговых стратегий
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-base">
-                  Получить консультацию
-                </Button>
-                <Button size="lg" variant="outline" className="text-base">
-                  Наши услуги
-                </Button>
-              </div>
+      <main className="flex-grow pt-20">
+        <section className="container mx-auto px-6 py-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Маркетинг, который приводит клиентов
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Разрабатываем эффективные стратегии продвижения для вашего бизнеса. Увеличиваем продажи, привлекаем целевую аудиторию.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <Link to="/contacts">
+                <Button size="lg">Получить консультацию</Button>
+              </Link>
+              <Link to="/services">
+                <Button size="lg" variant="outline">Наши услуги</Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-muted">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center animate-scale-in" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                    {stat.value}
+        <section className="bg-muted py-20">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-12">Наши услуги</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name="TrendingUp" size={24} className="text-primary" />
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    {stat.label}
+                  <h3 className="text-xl font-semibold mb-2">SEO-продвижение</h3>
+                  <p className="text-muted-foreground">
+                    Выводим ваш сайт в топ поисковых систем. Привлекаем органический трафик.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name="Target" size={24} className="text-primary" />
                   </div>
-                </div>
-              ))}
+                  <h3 className="text-xl font-semibold mb-2">Таргетированная реклама</h3>
+                  <p className="text-muted-foreground">
+                    Настраиваем точную рекламу в социальных сетях для вашей целевой аудитории.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name="LineChart" size={24} className="text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Контекстная реклама</h3>
+                  <p className="text-muted-foreground">
+                    Запускаем эффективные рекламные кампании в Яндекс.Директ и Google Ads.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="text-center mt-8">
+              <Link to="/services">
+                <Button variant="outline">Все услуги</Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Почему выбирают нас
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Мы предоставляем полный спектр маркетинговых услуг для достижения ваших бизнес-целей
-              </p>
+        <section className="container mx-auto px-6 py-20">
+          <h2 className="text-3xl font-bold text-center mb-12">Почему выбирают нас</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">150+</div>
+              <p className="text-muted-foreground">Довольных клиентов</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
-                <Card key={index} className="border-2 hover:border-primary transition-all duration-300 hover:shadow-lg">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon name={feature.icon} size={24} className="text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">5 лет</div>
+              <p className="text-muted-foreground">На рынке</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">300%</div>
+              <p className="text-muted-foreground">Средний рост продаж</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary mb-2">24/7</div>
+              <p className="text-muted-foreground">Поддержка клиентов</p>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-primary text-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Готовы увеличить продажи?
-              </h2>
-              <p className="text-lg mb-8 opacity-90">
-                Оставьте заявку, и мы разработаем индивидуальную стратегию продвижения для вашего бизнеса
-              </p>
-              <Button size="lg" variant="secondary" className="text-base">
-                Начать сотрудничество
+        <section className="bg-primary text-primary-foreground py-20">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold mb-4">Готовы начать?</h2>
+            <p className="text-xl mb-8 opacity-90">
+              Получите бесплатную консультацию и узнайте, как мы можем помочь вашему бизнесу расти
+            </p>
+            <Link to="/contacts">
+              <Button size="lg" variant="secondary">
+                Связаться с нами
               </Button>
-            </div>
+            </Link>
           </div>
         </section>
       </main>
-
+      
       <Footer />
     </div>
   );
