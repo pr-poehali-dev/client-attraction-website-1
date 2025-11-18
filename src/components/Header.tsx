@@ -40,8 +40,8 @@ const Header = () => {
               Отзывы
             </Link>
             <Link 
-              to="/contacts" 
-              className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/contacts') ? 'text-primary' : 'text-muted-foreground'}`}
+              to="/contact" 
+              className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/contact') ? 'text-primary' : 'text-muted-foreground'}`}
             >
               Контакты
             </Link>
